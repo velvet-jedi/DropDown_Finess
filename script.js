@@ -25,3 +25,22 @@ menuButtonsArray.forEach(butt => {
         butt.classList.toggle('activated');
     });
 });
+
+// -----------------------------------------------------------
+const optionMenu = document.querySelector('.select-menu');
+const selectBtn = optionMenu.querySelector('.select-btn');
+const options = optionMenu.querySelectorAll('.option');
+const sBtnText = optionMenu.querySelector('.sBtn-text');
+
+selectBtn.addEventListener('click', () => {
+    optionMenu.classList.toggle('active');
+});
+
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        const selectedOption = option.querySelector('.option-text').innerText;
+        sBtnText.textContent = selectedOption;
+
+        optionMenu.classList.remove('active');
+    });
+});
